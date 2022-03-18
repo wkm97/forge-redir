@@ -43,6 +43,8 @@ function App() {
   }
 
   useEffect(() => {
+    invoke("getMacroConfiguration", {}).then(config=>console.log(config))
+
     invoke<Config>("getUserConfiguration", {}).then((config) => {
       setConfig(config)
       invoke<Content>("getTargetLocation", config).then((targetLocation: Content)=>{
