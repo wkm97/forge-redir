@@ -1,5 +1,4 @@
 import { invoke } from "@forge/bridge";
-import { Content } from "@servicerocket/conf-cloud-frontend";
 import React, { useEffect, useState } from "react"
 import { RedirMacro } from "./redir-macro"
 import { Config } from "./types/redir-config";

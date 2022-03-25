@@ -5,7 +5,6 @@ export const redirConfigMapper = async(uiConfig: MacroConfigUI): Promise<Config>
   switch(uiConfig.type){
     case 'internal':
       const content = await getContentById(uiConfig.selectedContent);
-      console.log(content)
       const { _links } = content
       const internalConfig: Config = {
         type: "internal",
