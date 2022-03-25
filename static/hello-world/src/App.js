@@ -6,6 +6,7 @@ function App() {
   const [targetLocation, setTargetLocation] = useState(null);
   const [config, setConfig] = useState(null);
   const intervalId = useRef(null);
+  console.log(targetLocation)
 
   const isVisible = () => {
     if(!config){

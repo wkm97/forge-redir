@@ -41,8 +41,6 @@ const InternalConfiguration = () => {
 
 const Configuration = () => {
   const config = useConfig();
-  console.log(config)
-
   const renderConfig = (type: string) => {
     return (
       <Fragment>
