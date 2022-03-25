@@ -16,17 +16,17 @@ const mockConfig = {
 
 resolver.define('getUserConfiguration', async({payload, context})=> {
     const config = context.extension.config as MacroConfigUI
-    console.log(config)
     return config
 })
 
 resolver.define('getMacroConfiguration', async({payload, context})=> {
     const uiConfig = context.extension.config as MacroConfigUI
-    const config = redirConfigMapper(uiConfig)
+    const config = await redirConfigMapper(uiConfig)
+    console.log(config)
     return config
 })
 
-resolver.define('getTargetLocation', async({payload, context})=>{
+resolver.define('getContentLocation', async({payload, context})=>{
     const {selectedSpace, selectedContent} = payload;
     const results = await getContentById(selectedContent);
     return results
