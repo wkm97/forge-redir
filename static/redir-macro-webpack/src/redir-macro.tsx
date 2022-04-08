@@ -10,13 +10,26 @@ interface Props {
     disabled: boolean
 }
 
+const isSameDomain = (link: string) => {
+  const currDomain = document.referrer
+  return link.startsWith(currDomain)
+}
+
 export const RedirMacro = ({countdown=5, link, title, disabled=false}: Props) => {
     const intervalId = useRef<NodeJS.Timeout|null>(null);
+
+    isSameDomain(link)
 
     useEffect(()=>{
         if(!disabled){
             intervalId.current = setInterval(() => {
-                router.navigate(link).catch(()=>console.log('closed pop up'))
+                if(isSameDomain(link)){
+                  if(confirm(`Redirect to ${title}?`)){
+                    router.navigate(link).catch(()=>console.log('closed pop up'))
+                  }
+                }else{
+                  router.navigate(link).catch(()=>console.log('closed pop up'))
+                }
                 clearInterval(intervalId.current as unknown as number);
             }, countdown * 1000)
         }
