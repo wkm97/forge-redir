@@ -10,13 +10,13 @@ const App = () => {
     invoke<Config>("getMacroConfiguration", {}).then(config => setConfig(config))
   }, [])
 
-  if(config?.visible){
-    const {title, link} = config.location
+  if (config?.visible) {
+    const { title, link } = config.location
     return (
-      <RedirMacro 
+      <RedirMacro
         title={title}
         link={link}
-        countdown={config?.countdown} 
+        countdown={config?.countdown}
         disabled={!config?.redirectable}
       />
     )
@@ -31,7 +31,7 @@ import ReactDOM from "react-dom"
 
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

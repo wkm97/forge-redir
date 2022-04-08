@@ -16,6 +16,8 @@ modules:
 resources:
   - key: redir-macro
     path: static/redir-macro-webpack/build/redir-macro
+  - key: redir-modal
+    path: static/redir-macro-webpack/build/redir-modal
 permissions:
   content:
     styles:

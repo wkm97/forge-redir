@@ -14,15 +14,14 @@ Keep the scope small, balanced implementation on backend and frontend.
 - Redirect user to external links.
 - Redirect user after a period of time.
 
-## [Findings](https://rocketeers.atlassian.net/wiki/spaces/GREENENG/pages/2400223784/Forge+Findings)
+## [Findings on Forge](https://rocketeers.atlassian.net/wiki/spaces/GREENENG/pages/2400223784/Forge+Findings)
 - setInternal not working as expected in Forge-UI, the execution is happening in server-side on Atlassian Infrastructure.
 - Cannot detect preview/edit mode
 - Autocomplete Field in MacroConfig
 - testing library similar to `@testing-library/react` is not available for Forge UI.
+- `router.navigate` behave different depending on the location
+- create modal in custom-ui required [`Modal @forge/bridge`](https://developer.atlassian.com/platform/forge/custom-ui-bridge/modal/)
 
-
-## Forge Libraries
-- 
 ### Setup
 - Develop your app by running `forge tunnel` to proxy invocations locally
 - Use the `forge deploy` command when you want to persist code changes.
@@ -32,7 +31,6 @@ Keep the scope small, balanced implementation on backend and frontend.
 
 ## TODO
 - https://community.developer.atlassian.com/t/recommendations-for-unit-testing-components-from-the-ui-kit/49437/8
-- https://github.dev/sarthakarora1208/sample-crud-forge-app
 
 ## Custom UI test case
 - display correct message
