@@ -25,3 +25,13 @@ const App = () => {
 }
 
 export default App;
+
+import '@atlaskit/css-reset';
+import ReactDOM from "react-dom"
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App/>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
