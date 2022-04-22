@@ -6,7 +6,9 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "watch": "webpack serve",
-    "build": "webpack",
+    "build:macro": "webpack --config ./webpack.macro.ts",
+    "build:modal": "webpack --config ./webpack.modal.ts",
+    "build": "npm run build:macro && npm run build:modal",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -39,6 +41,7 @@
   },
   "dependencies": {
     "@atlaskit/css-reset": "^6.0.1",
+    "@atlaskit/modal-dialog": "^12.2.6",
     "@atlaskit/section-message": "^6.1.7",
     "@forge/bridge": "^2.1.1",
     "@servicerocket/conf-cloud-frontend": "^0.3.2",

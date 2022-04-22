@@ -1,11 +1,11 @@
 modules:
   macro:
-    - key: forge-redir-hello-world
-      resource: main
+    - key: forge-redir
+      resource: redir-macro
       resolver:
         function: resolver
       title: forge-redir
-      description: Inserts Hello world!
+      description: Redirection to internal or external link!
       config:
         function: redir-configuration
   function:
@@ -14,8 +14,10 @@ modules:
     - key: redir-configuration
       handler: config.run
 resources:
-  - key: main
-    path: static/redir-macro-webpack/build
+  - key: redir-macro
+    path: static/redir-macro-webpack/build/redir-macro
+  - key: redir-modal
+    path: static/redir-macro-webpack/build/redir-modal
 permissions:
   content:
     styles:

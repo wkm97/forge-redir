@@ -1,8 +1,8 @@
 import { getContentById } from "./confluence";
 import { Config, MacroConfigUI } from "./types/redir-config";
 
-export const redirConfigMapper = async(uiConfig: MacroConfigUI): Promise<Config> => {
-  switch(uiConfig.type){
+export const redirConfigMapper = async (uiConfig: MacroConfigUI): Promise<Config> => {
+  switch (uiConfig.type) {
     case 'internal':
       const content = await getContentById(uiConfig.selectedContent);
       const { _links } = content
