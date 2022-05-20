@@ -24,7 +24,6 @@ permissions:
       - unsafe-inline
   scopes:
     - read:confluence-content.all
-    - read:confluence-content.summary
     - read:confluence-space.summary
 app:
   id: ari:cloud:ecosystem::app/d95d51ce-3d5f-4d69-8ae6-bd7f9d200c6d
