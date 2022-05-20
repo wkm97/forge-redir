@@ -15,7 +15,7 @@ import '@atlaskit/css-reset';
 import { RedirProps } from "./redir-macro";
 
 
-const RedirModal = () => {
+export const RedirModal = () => {
   const [link, setLink] = useState('')
   const [title, setTitle] = useState('')
 

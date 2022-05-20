@@ -10,7 +10,7 @@ const App = () => {
     invoke<Config>("getMacroConfiguration", {}).then(config => setConfig(config))
   }, [])
 
-  if (config?.visible) {
+  if (config) {
     const { title, link } = config.location
     return (
       <RedirMacro
@@ -18,6 +18,7 @@ const App = () => {
         link={link}
         countdown={config?.countdown}
         disabled={!config?.redirectable}
+        visible={config?.visible}
       />
     )
   }

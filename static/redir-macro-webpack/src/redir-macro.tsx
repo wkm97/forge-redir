@@ -7,7 +7,8 @@ export interface RedirProps {
   countdown: number,
   link: string,
   title: string,
-  disabled: boolean
+  disabled?: boolean,
+  visible?: boolean
 }
 
 const isSameDomain = (link: string) => {
@@ -15,7 +16,7 @@ const isSameDomain = (link: string) => {
   return link.startsWith(currDomain)
 }
 
-export const RedirMacro: React.FC<RedirProps> = ({ countdown, link, title, disabled = false }) => {
+export const RedirMacro: React.FC<RedirProps> = ({ countdown, link, title, disabled = false, visible=true }) => {
   const intervalIdForCountdown = useRef<NodeJS.Timeout | null>(null);
 
   const openModal = () => {
@@ -48,13 +49,16 @@ export const RedirMacro: React.FC<RedirProps> = ({ countdown, link, title, disab
     }
   }, [])
 
-  return (
-    <SectionMessage appearance="warning" title="Redirection Notice">
-      <p>{'This page will redirect to '}
-        <a id="redirect-location" onClick={() => router.navigate(link)} target="_top">
-          {title}
-        </a>.
-      </p>
-    </SectionMessage>
-  );
+  if(visible){
+    return (
+      <SectionMessage appearance="warning" title="Redirection Notice">
+        <p>{'This page will redirect to '}
+          <a id="redirect-location" onClick={() => router.navigate(link)} target="_top">
+            {title}
+          </a>.
+        </p>
+      </SectionMessage>
+    );
+  }
+  return null;
 }
