@@ -23,7 +23,7 @@ export const RedirMacro: React.FC<RedirProps> = ({ countdown, link, title, disab
     const modal = new Modal({
       resource: 'redir-modal',
       onClose: (payload) => { },
-      size: 'small',
+      size: 'medium',
       context: {
         title,
         link,

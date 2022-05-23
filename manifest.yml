@@ -9,13 +9,17 @@ modules:
       config:
         function: redir-configuration
   function:
+    # backend function
     - key: resolver
       handler: resolver.handler
+    # forge-ui configuration
     - key: redir-configuration
       handler: config.run
 resources:
+  # custom-ui macro
   - key: redir-macro
     path: static/redir-macro-webpack/build/redir-macro
+  # custom-ui pop up modal
   - key: redir-modal
     path: static/redir-macro-webpack/build/redir-modal
 permissions:
@@ -23,7 +27,6 @@ permissions:
     styles:
       - unsafe-inline
   scopes:
-    - read:confluence-content.all
-    - read:confluence-space.summary
+    - read:content-details:confluence
 app:
   id: ari:cloud:ecosystem::app/d95d51ce-3d5f-4d69-8ae6-bd7f9d200c6d
